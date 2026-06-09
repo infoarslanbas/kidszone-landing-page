@@ -194,11 +194,20 @@
                 <p>Uygun fiyatlarla harika paketi seçin</p>
             </div>
 
-            <div class="pricing-grid">
-                <!-- Pricing Plan 1 -->
+            <!-- Pricing Type Toggle -->
+            <div class="pricing-toggle">
+                <button class="toggle-btn active" data-type="hourly">⏰ Saatlik</button>
+                <button class="toggle-btn" data-type="daily">☀️ Günlük</button>
+                <button class="toggle-btn" data-type="monthly">📅 Aylık</button>
+                <button class="toggle-btn" data-type="subscription">💳 Abonelik</button>
+            </div>
+
+            <!-- Hourly Packages -->
+            <div class="pricing-grid" id="pricing-hourly" style="display: grid;">
+                <!-- Hourly Plan 1 -->
                 <div class="pricing-card">
                     <div class="pricing-header">
-                        <h3>Saatlik Paket</h3>
+                        <h3>1 Saat</h3>
                         <div class="price">₺<span>75</span></div>
                         <p class="price-duration">Saat Başına</p>
                     </div>
@@ -208,16 +217,53 @@
                         <li>✓ Klimatize ortam</li>
                         <li>✓ Gözetim ve güvenlik</li>
                     </ul>
-                    <button class="btn btn-primary" onclick="scrollToContact()">Seç</button>
+                    <button class="btn btn-primary" onclick="selectPackage('1 Saat - ₺75')">Seç</button>
                 </div>
 
-                <!-- Pricing Plan 2 -->
+                <!-- Hourly Plan 2 -->
                 <div class="pricing-card featured">
-                    <div class="badge">Popüler</div>
+                    <div class="badge">En Çok İsteniyor</div>
                     <div class="pricing-header">
-                        <h3>Günlük Paket</h3>
+                        <h3>2 Saat</h3>
+                        <div class="price">₺<span>140</span></div>
+                        <p class="price-duration">Saat Başına</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ Tüm oyun konsollarına erişim</li>
+                        <li>✓ Sınırsız oyun seçeneği</li>
+                        <li>✓ Klimatize ortam</li>
+                        <li>✓ Gözetim ve güvenlik</li>
+                        <li>✓ Hafif atıştırmalık</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="selectPackage('2 Saat - ₺140')">Seç</button>
+                </div>
+
+                <!-- Hourly Plan 3 -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>3 Saat</h3>
+                        <div class="price">₺<span>200</span></div>
+                        <p class="price-duration">Saat Başına</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ Tüm oyun konsollarına erişim</li>
+                        <li>✓ Sınırsız oyun seçeneği</li>
+                        <li>✓ Klimatize ortam</li>
+                        <li>✓ Oyun enstrüktörü</li>
+                        <li>✓ Kahvaltı ve atıştırmalık</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="selectPackage('3 Saat - ₺200')">Seç</button>
+                </div>
+            </div>
+
+            <!-- Daily Packages -->
+            <div class="pricing-grid" id="pricing-daily" style="display: none;">
+                <!-- Daily Plan 1 -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>1 Gün</h3>
                         <div class="price">₺<span>180</span></div>
-                        <p class="price-duration">Tüm Gün</p>
+                        <p class="price-duration">Tam Gün</p>
                     </div>
                     <ul class="pricing-features">
                         <li>✓ Tüm hizmetlere erişim</li>
@@ -226,45 +272,170 @@
                         <li>✓ Oyun enstrüktörü</li>
                         <li>✓ Fotoğraf hizmeti</li>
                     </ul>
-                    <button class="btn btn-primary" onclick="scrollToContact()">Seç</button>
+                    <button class="btn btn-primary" onclick="selectPackage('1 Gün - ₺180')">Seç</button>
                 </div>
 
-                <!-- Pricing Plan 3 -->
-                <div class="pricing-card">
+                <!-- Daily Plan 2 -->
+                <div class="pricing-card featured">
+                    <div class="badge">Popüler</div>
                     <div class="pricing-header">
-                        <h3>Haftalık Paket</h3>
-                        <div class="price">₺<span>1.200</span></div>
-                        <p class="price-duration">5 Gün</p>
+                        <h3>5 Gün (Haftalık)</h3>
+                        <div class="price">₺<span>800</span></div>
+                        <p class="price-duration">Haftada</p>
+                        <p class="discount">%25 İndirim</p>
                     </div>
                     <ul class="pricing-features">
-                        <li>✓ Günlük paket avantajları</li>
-                        <li>✓ Spesial etkinlikler</li>
-                        <li>✓ %15 İndirim</li>
+                        <li>✓ Tüm özellikler</li>
+                        <li>✓ Günlük aktiviteler</li>
+                        <li>✓ Haftalık turnuva</li>
+                        <li>✓ VIP gözetim</li>
                         <li>✓ Sertifika ve rozet</li>
                     </ul>
-                    <button class="btn btn-primary" onclick="scrollToContact()">Seç</button>
+                    <button class="btn btn-primary" onclick="selectPackage('5 Gün - ₺800')">Seç</button>
                 </div>
 
-                <!-- Pricing Plan 4 -->
+                <!-- Daily Plan 3 -->
                 <div class="pricing-card">
                     <div class="pricing-header">
-                        <h3>Doğum Günü Paketi</h3>
+                        <h3>10 Gün (2 Hafta)</h3>
                         <div class="price">₺<span>1.500</span></div>
-                        <p class="price-duration">10 Çocuk</p>
+                        <p class="price-duration">İki Hafta</p>
+                        <p class="discount">%35 İndirim</p>
                     </div>
                     <ul class="pricing-features">
-                        <li>✓ 3 Saat oyun alanı kullanımı</li>
-                        <li>✓ Pasta ve meyveler</li>
-                        <li>✓ Dekorasyon ve balon</li>
-                        <li>✓ Oyun rehberi</li>
-                        <li>✓ Fotoğraf ve video</li>
+                        <li>✓ Tüm özellikler</li>
+                        <li>✓ Özel etkinlikler</li>
+                        <li>✓ Bi-haftalık turnuva</li>
+                        <li>✓ Kişisel rehber</li>
+                        <li>✓ Premium fotoğraf</li>
                     </ul>
-                    <button class="btn btn-primary" onclick="scrollToContact()">Seç</button>
+                    <button class="btn btn-primary" onclick="selectPackage('10 Gün - ₺1.500')">Seç</button>
+                </div>
+            </div>
+
+            <!-- Monthly Packages -->
+            <div class="pricing-grid" id="pricing-monthly" style="display: none;">
+                <!-- Monthly Plan 1 -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>1 Aylık</h3>
+                        <div class="price">₺<span>3.000</span></div>
+                        <p class="price-duration">Aylık</p>
+                        <p class="discount">Sınırsız Erişim</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ Haftalık 5 gün erişim</li>
+                        <li>✓ Tüm hizmetler dahil</li>
+                        <li>✓ Ayda 2 turnuva</li>
+                        <li>✓ Kişisel rehber</li>
+                        <li>✓ Üyelik kartı</li>
+                        <li>✓ Ek %10 indirim</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="selectPackage('1 Aylık - ₺3.000')">Seç</button>
+                </div>
+
+                <!-- Monthly Plan 2 -->
+                <div class="pricing-card featured">
+                    <div class="badge">En İyi Değer</div>
+                    <div class="pricing-header">
+                        <h3>Sınırsız Aylık</h3>
+                        <div class="price">₺<span>5.000</span></div>
+                        <p class="price-duration">Aylık</p>
+                        <p class="discount">Tam Erişim</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ Sınırsız günlük erişim</li>
+                        <li>✓ Tüm aktivitelere katılım</li>
+                        <li>✓ Ayda 4 turnuva</li>
+                        <li>✓ Premium rehber</li>
+                        <li>✓ Üyelik + rozet</li>
+                        <li>✓ VIP etkinlikler</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="selectPackage('Sınırsız Aylık - ₺5.000')">Seç</button>
+                </div>
+
+                <!-- Monthly Plan 3 -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Aile Aylığı (4 Çocuk)</h3>
+                        <div class="price">₺<span>8.000</span></div>
+                        <p class="price-duration">Aylık</p>
+                        <p class="discount">%40 İndirim</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ 4 çocuk sınırsız erişim</li>
+                        <li>✓ Tüm aktiviteler</li>
+                        <li>✓ Aile turnuvaları</li>
+                        <li>✓ Grup etkinlikleri</li>
+                        <li>✓ Aile kıyafeti</li>
+                        <li>✓ Özel indirimler</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="selectPackage('Aile Aylığı - ₺8.000')">Seç</button>
+                </div>
+            </div>
+
+            <!-- Subscription Packages -->
+            <div class="pricing-grid" id="pricing-subscription" style="display: none;">
+                <!-- Subscription Plan 1 -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>3 Aylık Abonelik</h3>
+                        <div class="price">₺<span>8.100</span></div>
+                        <p class="price-duration">3 Ay</p>
+                        <p class="discount">₺2.700 Tasarruf</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ Haftalık 5 gün erişim</li>
+                        <li>✓ Her ay iptal edebilir</li>
+                        <li>✓ 3 ayda 6 turnuva</li>
+                        <li>✓ Kişisel rehber</li>
+                        <li>✓ Avantajlı fiyat</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="selectPackage('3 Aylık Abonelik - ₺8.100')">Seç</button>
+                </div>
+
+                <!-- Subscription Plan 2 -->
+                <div class="pricing-card featured">
+                    <div class="badge">Önerilen</div>
+                    <div class="pricing-header">
+                        <h3>6 Aylık Abonelik</h3>
+                        <div class="price">₺<span>14.400</span></div>
+                        <p class="price-duration">6 Ay</p>
+                        <p class="discount">₺6.000 Tasarruf</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ Sınırsız günlük erişim</li>
+                        <li>✓ Otomatik yenileme</li>
+                        <li>✓ 6 ayda 12 turnuva</li>
+                        <li>✓ Premium rehber</li>
+                        <li>✓ Ek %15 indirim</li>
+                        <li>✓ Özel etkinlikler</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="selectPackage('6 Aylık Abonelik - ₺14.400')">Seç</button>
+                </div>
+
+                <!-- Subscription Plan 3 -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>12 Aylık Abonelik</h3>
+                        <div class="price">₺<span>25.000</span></div>
+                        <p class="price-duration">1 Yıl</p>
+                        <p class="discount">₺15.000 Tasarruf</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ Sınırsız tam yıl erişim</li>
+                        <li>✓ Tüm aktivitelere dahil</li>
+                        <li>✓ Ayda 4 turnuva</li>
+                        <li>✓ VIP premium rehber</li>
+                        <li>✓ Ek %20 indirim</li>
+                        <li>✓ Doğum günü partisi hediye</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="selectPackage('12 Aylık Abonelik - ₺25.000')">Seç</button>
                 </div>
             </div>
 
             <div class="pricing-note">
-                <p>💡 <strong>Grup İndirimleri:</strong> 5+ çocuk için %10, 10+ çocuk için %20 indirim alın!</p>
+                <p>💡 <strong>Grup İndirimleri:</strong> 5+ çocuk için ek %10, 10+ çocuk için ek %20 indirim alın!</p>
             </div>
         </div>
     </section>
