@@ -235,4 +235,27 @@ window.addEventListener('load', () => {
     }
 });
 
+// Enhanced Select Package Function with Analytics
+window.selectPackage = function(packageName) {
+    const messageInput = document.getElementById('message');
+    if (messageInput) {
+        // Get existing message or start fresh
+        const currentMessage = messageInput.value;
+        const packageMessage = currentMessage.includes('paketinden') 
+            ? packageName 
+            : `Merhaba, ${packageName} paketinden ilgiliyim. `;
+        
+        messageInput.value = packageMessage;
+        messageInput.focus();
+        
+        // Scroll to contact section
+        setTimeout(() => {
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+        
+        // Log selection for analytics (optional backend)
+        console.log('📦 Paket seçildi:', packageName);
+    }
+};
+
 console.log('📧 Form sistemi aktif!');

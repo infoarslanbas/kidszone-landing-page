@@ -36,17 +36,36 @@
 - Responsive grid layout
 
 ### 5️⃣ Pricing Section (Fiyatlandırma)
-4 paket:
-1. **Saatlik Paket** - ₺75 (1 saatlik oynama)
-2. **Günlük Paket** - ₺180 (Tüm gün, öğle yemeği dahil, POPÜLER)
-3. **Haftalık Paket** - ₺1.200 (5 gün, %15 indirim)
-4. **Doğum Günü Paketi** - ₺1.500 (10 çocuk, 3 saat, dekorasyon)
+
+#### **Dinamik Paket Sistemi - 4 Kategori**
+
+1. **⏰ Saatlik Paketler** (Başlangıç fiyatlandırması)
+   - 1 Saat: ₺75
+   - 2 Saat: ₺140 (En Çok İsteniyor)
+   - 3 Saat: ₺200
+
+2. **☀️ Günlük Paketler** (Tam gün seçenekleri)
+   - 1 Gün: ₺180
+   - 5 Gün (Haftalık): ₺800 (%25 indirim, Popüler)
+   - 10 Gün (2 Hafta): ₺1.500 (%35 indirim)
+
+3. **📅 Aylık Paketler** (Aylık erişim)
+   - 1 Aylık: ₺3.000 (Haftalık 5 gün)
+   - Sınırsız Aylık: ₺5.000 (En İyi Değer, tam erişim)
+   - Aile Aylığı: ₺8.000 (4 çocuk, %40 indirim)
+
+4. **💳 Abonelik Paketleri** (Uzun vadeli avantajlar)
+   - 3 Aylık: ₺8.100 (₺2.700 tasarruf)
+   - 6 Aylık: ₺14.400 (₺6.000 tasarruf, Önerilen)
+   - 12 Aylık: ₺25.000 (₺15.000 tasarruf, doğum günü partisi hediye)
 
 **Özellikler:**
-- Öne çıkan kart (featured) vurgulaması
-- Gruplara uygun indirimler
-- Özellik listesi
-- Seçim butonları
+- Dinamik toggle butonu ile paket kategorileri arasında geçiş
+- Indirim ve tasarruf oranları gösterimi
+- Popüler ve öne çıkan paket göstergesi
+- Smooth animasyonlu paket geçişleri
+- Paket seçimi ile form otomatik doldurma
+- Grup indirimleri (%10 ve %20)
 
 ### 6️⃣ Contact Section (İletişim Bölümü)
 

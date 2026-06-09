@@ -153,4 +153,49 @@ document.querySelectorAll('.service-card').forEach(card => {
     });
 });
 
+// Pricing Toggle Functionality
+document.querySelectorAll('.toggle-btn').forEach(button => {
+    button.addEventListener('click', function() {
+        // Remove active class from all buttons
+        document.querySelectorAll('.toggle-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        
+        // Add active class to clicked button
+        this.classList.add('active');
+        
+        // Hide all pricing grids
+        document.querySelectorAll('[id^="pricing-"]').forEach(grid => {
+            grid.style.display = 'none';
+        });
+        
+        // Show selected pricing grid
+        const type = this.getAttribute('data-type');
+        const selectedGrid = document.getElementById('pricing-' + type);
+        if (selectedGrid) {
+            selectedGrid.style.display = 'grid';
+            // Animate cards
+            selectedGrid.querySelectorAll('.pricing-card').forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        }
+    });
+});
+
+// Select Package Function
+function selectPackage(packageName) {
+    const messageInput = document.getElementById('message');
+    if (messageInput) {
+        messageInput.value = `Merhaba, ${packageName} paketinden ilgiliyim. `;
+        messageInput.focus();
+        document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
 console.log('🎮 KidsZone Web Sitesi Başarıyla Yüklendi!');

@@ -33,14 +33,22 @@
         gap: 2rem;
     }
 
-    .pricing-card.featured {
-        transform: scale(1);
+    .pricing-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
     }
 
-    .pricing-card.featured:hover {
-        transform: translateY(-5px);
+    .pricing-toggle {
+        gap: 0.5rem;
+        margin: 2rem 0 3rem;
     }
-}
+
+    .toggle-btn {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+        flex: 1;
+        min-width: 100px;
+    }
 
 /* Mobile Devices (< 768px) */
 @media (max-width: 768px) {
